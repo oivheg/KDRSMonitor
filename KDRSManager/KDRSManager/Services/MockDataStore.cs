@@ -8,21 +8,21 @@ using KDRSManager.Models;
 [assembly: Xamarin.Forms.Dependency(typeof(KDRSManager.Services.MockDataStore))]
 namespace KDRSManager.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Company>
     {
-        List<Item> items;
+        List<Company> items;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            items = new List<Company>();
+            var mockItems = new List<Company>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
+                new Company { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
+                new Company { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
+                new Company { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
+                new Company { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
+                new Company { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
+                new Company { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
             };
 
             foreach (var item in mockItems)
@@ -31,16 +31,16 @@ namespace KDRSManager.Services
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Company item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Company item)
         {
-            var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var _item = items.Where((Company arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(_item);
             items.Add(item);
 
@@ -49,18 +49,18 @@ namespace KDRSManager.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var _item = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var _item = items.Where((Company arg) => arg.Id == id).FirstOrDefault();
             items.Remove(_item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Company> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Company>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

@@ -2,7 +2,7 @@
 
 namespace KDRSManager.Models
 {
-    public class Item
+    public class Company
     {
         public string Id { get; set; }
         public string Text { get; set; }

@@ -4,10 +4,11 @@ using KDRSManager.Models;
 
 namespace KDRSManager.ViewModels
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class CompanyDetailViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public Company Item { get; set; }
+
+        public CompanyDetailViewModel(Company item = null)
         {
             Title = item?.Text;
             Item = item;

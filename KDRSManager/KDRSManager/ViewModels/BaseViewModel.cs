@@ -12,7 +12,7 @@ namespace KDRSManager.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Company> DataStore => DependencyService.Get<IDataStore<Company>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy

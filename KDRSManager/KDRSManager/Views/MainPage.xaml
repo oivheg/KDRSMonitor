@@ -4,21 +4,21 @@
             xmlns:views="clr-namespace:KDRSManager.Views"
             x:Class="KDRSManager.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="Browse">
+        <NavigationPage Title="Selskap">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
+                    <On Platform="iOS" Value="tab_feed.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:CompanyPage />
             </x:Arguments>
         </NavigationPage>
-        
-        <NavigationPage Title="About">
+
+        <NavigationPage Title="Servere">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
+                    <On Platform="iOS" Value="tab_about.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>

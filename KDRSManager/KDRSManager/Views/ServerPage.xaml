@@ -5,7 +5,7 @@
              xmlns:vm="clr-namespace:KDRSManager.ViewModels"
              Title="{Binding Title}">
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <vm:ServerViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -65,7 +65,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Button Margin="0,10,0,0" Text="Learn more" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+                <Button Margin="0,10,0,0" Text="GetData" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" />
             </StackLayout>
         </ScrollView>
     </Grid>

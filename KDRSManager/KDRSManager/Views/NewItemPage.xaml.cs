@@ -11,15 +11,15 @@ namespace KDRSManager.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Company Item { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Item = new Company
             {
-                Text = "Item name",
+                Text = "Company name",
                 Description = "This is an item description."
             };
 

@@ -9,28 +9,28 @@ using KDRSManager.ViewModels;
 namespace KDRSManager.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ItemDetailPage : ContentPage
-	{
-        ItemDetailViewModel viewModel;
+	public partial class CompanyDetailPage : ContentPage
+    {
+        private CompanyDetailViewModel viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public CompanyDetailPage(CompanyDetailViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
         }
 
-        public ItemDetailPage()
+        public CompanyDetailPage()
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new Company
             {
-                Text = "Item 1",
+                Text = "Company 1",
                 Description = "This is an item description."
             };
 
-            viewModel = new ItemDetailViewModel(item);
+            viewModel = new CompanyDetailViewModel(item);
             BindingContext = viewModel;
         }
     }
