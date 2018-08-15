@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using KDRSManager.Models;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using KDRSManager.Models;
 
 namespace KDRSManager.Views
 {

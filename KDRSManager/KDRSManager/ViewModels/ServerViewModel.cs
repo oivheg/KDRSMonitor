@@ -1,11 +1,6 @@
 ﻿using KDRSManager.Connections;
-using KDRSManager.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Xml.Linq;
 using Xamarin.Forms;
 
 namespace KDRSManager.ViewModels

@@ -1,9 +1,6 @@
-﻿using Hanssens.Net;
-using KDRSManagerRazor.Models;
+﻿using KDRSManager.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace KDRSManager.Data
 {
@@ -13,14 +10,14 @@ namespace KDRSManager.Data
         private static List<Report> Reports = new List<Report>();
         public static List<Server> Servers = new List<Server>();
 
-        private static LocalStorageConfiguration config = new LocalStorageConfiguration()
-        {
-            // see the section "Configuration" further on
-            AutoLoad = false,
-            AutoSave = false
-        };
+        //private static LocalStorageConfiguration config = new LocalStorageConfiguration()
+        //{
+        //    // see the section "Configuration" further on
+        //    AutoLoad = false,
+        //    AutoSave = false
+        //};
 
-        private static LocalStorage storage = new LocalStorage(config);
+        //private static LocalStorage storage = new LocalStorage(config);
 
         public static List<Company> GetCompanies()
         {
@@ -43,10 +40,10 @@ namespace KDRSManager.Data
             //Servers.Add(srv);
 
             // store any object, or collection providing only a 'key'
-            string key = srv.Adress;
-            string value = srv.Adress + ";" + srv.UserID + ";" + srv.Password;
-            storage.Store(key, value);
-            storageKeys.Add(key);
+            //string key = srv.Adress;
+            //string value = srv.Adress + ";" + srv.UserID + ";" + srv.Password;
+            //storage.Store(key, value);
+            //storageKeys.Add(key);
         }
 
         internal static List<Server> GetServers()
@@ -57,21 +54,24 @@ namespace KDRSManager.Data
             //String key = "Server1";
             Servers.Clear();
 
-            foreach (String item in storageKeys)
-            {
-                String Server = (string)storage.Get(item);
+            //foreach (String item in storageKeys)
+            //{
+            //    String Server = (string)storage.Get(item);
 
-                String ip, pw;
-                String user;
-                string[] words = Server.Split(";");
+            //    String ip, pw;
+            //    String user;
+            //    string[] words = Server.Split(";");
 
-                ip = words.GetValue(0).ToString();
-                user = words.GetValue(1).ToString();
-                pw = words.GetValue(2).ToString();
-                Server TMP = new Server(ip, int.Parse(user), pw);
-                Servers.Add(TMP);
-            }
-
+            //    ip = words.GetValue(0).ToString();
+            //    user = words.GetValue(1).ToString();
+            //    pw = words.GetValue(2).ToString();
+            //    Server TMP = new Server(ip, int.Parse(user), pw);
+            //    Servers.Add(TMP);
+            //}
+            Server TMP = new Server("91.192.221.162", 999, "fuglekasser");
+            Server TMP2 = new Server("91.192.221.21", 999, "fuglekasser");
+            Servers.Add(TMP);
+            Servers.Add(TMP2);
             return Servers;
         }
 

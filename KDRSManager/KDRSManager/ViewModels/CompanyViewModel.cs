@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-
+﻿using KDRSManager.Connections;
+using KDRSManager.Data;
 using KDRSManager.Models;
 using KDRSManager.Views;
-using KDRSManager.Connections;
+using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using Xamarin.Forms;
 
 namespace KDRSManager.ViewModels
 {
@@ -42,23 +41,26 @@ namespace KDRSManager.ViewModels
 
             IsBusy = true;
 
-            try
+            foreach (var servers in StoredData.GetServers())
             {
-                //this.Companies.Clear();
-                List<Company> list = await LoadXMLCompanies(await wb.GetXml().ConfigureAwait(false));
-                // var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in list)
+                try
                 {
-                    this.Companies.Add(item);
+                    //this.Companies.Clear();
+
+                    // var items = await DataStore.GetItemsAsync(true);
+                    foreach (var item in await LoadXMLCompanies(await wb.GetXml(servers.Adress).ConfigureAwait(false)))
+                    {
+                        Companies.Add(item);
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+                finally
+                {
+                    IsBusy = false;
+                }
             }
         }
 

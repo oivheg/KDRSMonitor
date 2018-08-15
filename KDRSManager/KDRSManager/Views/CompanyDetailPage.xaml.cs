@@ -1,15 +1,12 @@
-﻿using System;
-
+﻿using KDRSManager.Models;
+using KDRSManager.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using KDRSManager.Models;
-using KDRSManager.ViewModels;
-
 namespace KDRSManager.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CompanyDetailPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class CompanyDetailPage : ContentPage
     {
         private CompanyDetailViewModel viewModel;
 

@@ -1,9 +1,8 @@
-﻿using System;
+﻿using KDRSManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using KDRSManager.Models;
 
 [assembly: Xamarin.Forms.Dependency(typeof(KDRSManager.Services.MockDataStore))]
 namespace KDRSManager.Services

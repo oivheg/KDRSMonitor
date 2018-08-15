@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace KDRSManager.Connections
 {
     public class WebRequest
     {
-        public async Task<String> GetXml()
+        public async Task<String> GetXml(String _srv)
         {
             String response = null;
             //Check network status
             if (NetworkCheck.IsInternet())
             {
-                String srv = "91.192.221.234";
+                String srv = _srv;
                 String RT = "2";
                 int YR = 2018;
                 int M = 7;

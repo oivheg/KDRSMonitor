@@ -1,6 +1,4 @@
-﻿using System;
-
-using KDRSManager.Models;
+﻿using KDRSManager.Models;
 
 namespace KDRSManager.ViewModels
 {

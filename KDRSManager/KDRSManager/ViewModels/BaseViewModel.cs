@@ -1,12 +1,10 @@
-﻿using System;
+﻿using KDRSManager.Models;
+using KDRSManager.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
-using KDRSManager.Models;
-using KDRSManager.Services;
 
 namespace KDRSManager.ViewModels
 {
@@ -42,6 +40,7 @@ namespace KDRSManager.ViewModels
         }
 
         #region INotifyPropertyChanged
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
@@ -51,6 +50,7 @@ namespace KDRSManager.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
+
+        #endregion INotifyPropertyChanged
     }
 }

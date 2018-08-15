@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KDRSManager.Models
+﻿namespace KDRSManager.Models
 {
     public class Company
     {
