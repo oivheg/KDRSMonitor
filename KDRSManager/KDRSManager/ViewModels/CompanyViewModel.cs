@@ -44,9 +44,10 @@ namespace KDRSManager.ViewModels
             foreach (var servers in StoredData.GetServers())
             {
                 try
+
                 {
                     //this.Companies.Clear();
-
+                    Companies.Clear();
                     // var items = await DataStore.GetItemsAsync(true);
                     foreach (var item in await LoadXMLCompanies(await wb.GetXml(servers.Adress).ConfigureAwait(false)))
                     {

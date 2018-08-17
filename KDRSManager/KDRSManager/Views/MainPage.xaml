@@ -4,7 +4,7 @@
             xmlns:views="clr-namespace:KDRSManager.Views"
             x:Class="KDRSManager.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage Title="Selskap">
+        <NavigationPage Title="Avdelinger">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png" />
@@ -22,7 +22,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:AboutPage />
+                <views:ServerPage />
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

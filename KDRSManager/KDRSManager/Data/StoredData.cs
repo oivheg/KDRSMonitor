@@ -70,8 +70,12 @@ namespace KDRSManager.Data
             //}
             Server TMP = new Server("91.192.221.162", 999, "fuglekasser");
             Server TMP2 = new Server("91.192.221.21", 999, "fuglekasser");
+            Server TMP3 = new Server("91.192.221.234", 999, "fuglekasser");
             Servers.Add(TMP);
             Servers.Add(TMP2);
+            Servers.Add(TMP3);
+            //Servers.Add(TMP2);
+            //Servers.Add(TMP3);
             return Servers;
         }
 
